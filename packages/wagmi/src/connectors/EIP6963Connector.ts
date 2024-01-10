@@ -1,5 +1,5 @@
 import type { Chain, WindowProvider } from '@wagmi/core'
-import { InjectedConnector } from '@wagmi/core/connectors/injected'
+import { injected } from 'wagmi/connectors'
 import { getAddress } from 'viem'
 
 // -- Helpers ----------------------------------------------------------
@@ -27,7 +27,7 @@ interface Config {
 }
 
 // -- Connector --------------------------------------------------------
-export class EIP6963Connector extends InjectedConnector {
+export class EIP6963Connector extends injected {
   override readonly id = 'eip6963'
 
   override readonly name = 'EIP6963'
